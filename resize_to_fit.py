@@ -11,5 +11,6 @@ for image in os.listdir(semester):
     if im.size[0] <= 150:
         continue
     wratio = 150 / im.size[0]
+    im = im.convert('RGB')
     im = im.resize((int(wratio * im.size[0]), int(wratio * im.size[1])))
     im.save(path)
